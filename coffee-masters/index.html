@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Masters Cehckout</title>
+    <link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+  rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png" alt="coffe-logo">
+        <h1>Coffee Masters</h1>
+    </header>
+    <main class="page">
+        <article class="payment-info">
+            <div class="items-box box">
+                <h2 class="box-title">ITEMS</h2>
+                <div class="basket">
+                    <ul class="items">
+                        <li class="item">
+                            <div class="item-quantity">1X</div>
+                            <p class="item-title">Cappucino</p>
+                            <p class="item-price">£6.00</p>
+                            <div class="item-specs">
+                                <p class="item-spec">Light Foam</p>
+                            </div>
+
+                        </li>
+                        <li class="item">
+                            <div class="item-quantity">1X</div>
+                            <p class="item-title">Cappucino</p>
+                            <p class="item-price">£7.90</p>  
+                            <div class="item-specs">
+                                <p class="item-spec">Almond Milk</p>
+                                <p class="item-spec">Double Espresso Shot</p>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="item-quantity">1X</div>
+                            <p class="item-title">Croissant</p>
+                            <p class="item-price">£5.37</p>
+                            <div class="item-specs">
+                                <p class="item-spec">Butter</p> 
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="name-box box">
+                <h2>NAME</h2>
+                <div class="name">
+                    <label for="name" class="name-label label">Name of order</label>
+                    <input type="text" name="name" id="name" class="name-input input">
+                </div>
+            </div>
+            <div class="payment-box box">
+                <h2>PAYMENT</h2>
+                <div class="payment-input">
+                    <div class="cc-box">
+                        <label for="card-number" class="card-label label">Card number</label>
+                        <input type="text" name="card-number" id="card-number" class="card-input input">
+                    </div>
+
+                    <div class="cc-box">
+                        <label for="ccv" class="ccv-label label">CCV number</label>
+                        <input type="text" name="ccv" class="ccv-input input">
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="cash-breakdown">
+            <div class="pricing-table">
+                <table class="prices">
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td>£19.27</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td>£0.96</td>
+                    </tr>
+                    <tr class="final-totals">
+                        <td>Total</td>
+                        <td>£20.23</td>
+                    </tr>
+                </table>
+            </div>
+            <button class="cta-btn">Place order</button>
+        </article>
+    </main>
+
+
+</body>
+</html>
