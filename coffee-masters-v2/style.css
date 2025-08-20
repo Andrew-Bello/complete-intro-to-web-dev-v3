@@ -62,6 +62,7 @@ body {
     border-radius: 8px;
     color: #885a2d;
     padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px;
 }
 
 .box-header {
