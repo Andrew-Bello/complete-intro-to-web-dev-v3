@@ -1,0 +1,42 @@
+/* GENERAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open sans', sans-serif;
+    background-color: #dee2e6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+background-color: #343a40;
+height: 700px;
+width: 450px;
+display: grid;
+grid-template-rows: repeat(6, 1fr);
+}
+
+.input {
+    color: #f8f9fa;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cancel {
+    grid-column: span 2;
+}
+
+.zero {
+    grid-column: span 3;
+}
