@@ -25,13 +25,14 @@ body {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
     border: 1px solid black;
+    border-radius: 8px;
 }
 
 .input {
     color: #f8f9fa;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .row {
@@ -47,7 +48,15 @@ body {
 }
 
 .operator {
-    background-color: #ff922b;
+    background-color: #22b8cf;
+}
+
+.operator:hover {
+    background-color: #15aabf;
+}
+
+.operator:active {
+    background-color: #1098ad;
 }
 
 .cancel {
@@ -56,4 +65,31 @@ body {
 
 .zero {
     grid-column: span 3;
+}
+
+.cancel, 
+.backspace {
+    background-color: #adb5bd;
+}
+
+.cancel:hover,
+.backspace:hover {
+    background-color: #9ca3aa;
+}
+
+.cancel:active,
+.backspace:active {
+    background-color: #8a9197;
+}
+
+.num {
+    background-color: #e9ecef;
+}
+
+.num:hover {
+    background-color: #d2d4d7;
+}
+
+.num:active {
+    background-color: #babdbf;
 }
