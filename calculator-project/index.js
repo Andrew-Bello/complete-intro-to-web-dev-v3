@@ -1,7 +1,7 @@
 const nums = document.querySelectorAll('.num');
 const operators = document.querySelectorAll('.operator');
 const input = document.querySelector('.input');
-const cancelBtn = document.querySelector('.cancel');
+const clearBtn = document.querySelector('.clear');
 const backspaceBtn = document.querySelector('.backspace');
 
 const inputValue = [];
@@ -9,37 +9,54 @@ const numArr = [];
 let joinedValue;
 let result; 
 
+function operatorPressed() {
+    let operator;
+    for(let i = 0; i < operators.length; i++) {
+        operators[i].addEventListener('click', () => {
+            operator = operators[i].value;
+        })
+    }
+    return operator;
+}
+console.log(operatorPressed())
+
 function numsPressed() {
     for(let i = 0; i < nums.length; i++) {
         nums[i].addEventListener('click', () => {
             inputValue.push(nums[i].value);
             joinedValue = Number(inputValue.join(''));
             input.innerText = joinedValue;
-            console.log(joinedValue, typeof joinedValue)
         })
     }
 }
 
 numsPressed()
 
-function opsPressed() {
-    for(let i = 0; i < operators.length; i++) {
-        operators[i].addEventListener('clcik', () => {
-            console.log(operators[i].value)
-        })
-    }
+
+function backspace() {
+    backspaceBtn.addEventListener('click', () => {
+        inputValue.splice(-1);
+        joinedValue = Number(inputValue.join(''));
+        input.innerText = joinedValue;
+    })
 }
 
-opsPressed()
+backspace()
 
-const newArr = [1,3,4,5];
-
-function multiply(arr) {
-    let sum = 1
-    for(let i = 0; i < arr.length; i++) {
-        sum *= arr[i];
-    }
-    return sum;
+function clear() {
+    clearBtn.addEventListener('click', () => {
+        inputValue.length = 0;
+        input.innerText = 0;
+    })
 }
 
-console.log(multiply(newArr));
+clear();
+
+
+// function multiply(arr) {
+//     let sum = 1
+//     for(let i = 0; i < arr.length; i++) {
+//         sum *= arr[i];
+//     }
+//     return sum;
+// }

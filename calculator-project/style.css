@@ -59,7 +59,7 @@ body {
     background-color: #1098ad;
 }
 
-.cancel {
+.clear {
     grid-column: span 2;
 }
 
@@ -67,7 +67,7 @@ body {
     grid-column: span 3;
 }
 
-.cancel, 
+.clear, 
 .backspace {
     background-color: #adb5bd;
 }
