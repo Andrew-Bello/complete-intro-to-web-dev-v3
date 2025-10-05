@@ -5,20 +5,43 @@ const clearBtn = document.querySelector('.clear');
 const backspaceBtn = document.querySelector('.backspace');
 
 const inputValue = [];
-const numArr = [];
+const calcArr = [];
+let operatorClicked = false;
+let operator;
 let joinedValue;
 let result; 
 
+function calc(arr) {
+    let result = arr[0];
+    for(let i = 0; i < arr.length; i++) {
+        
+    }
+}
+
+function reset() {
+    inputValue.length = 0
+    joinedValue = 0;
+    input.innerText = 0;
+}
+
 function operatorPressed() {
-    let operator;
     for(let i = 0; i < operators.length; i++) {
         operators[i].addEventListener('click', () => {
             operator = operators[i].value;
+            operatorClicked = true;
+            if(operatorClicked = true) {
+                calcArr.push(joinedValue);
+                calcArr.push(operators[i].value)
+                reset();
+            }
+            if(calcArr[calcArr.length - 1] === '=') {
+                calcArr.pop();
+                calc(calcArr);
+            }           
         })
     }
-    return operator;
 }
-console.log(operatorPressed())
+operatorPressed()
 
 function numsPressed() {
     for(let i = 0; i < nums.length; i++) {
@@ -38,6 +61,7 @@ function backspace() {
         inputValue.splice(-1);
         joinedValue = Number(inputValue.join(''));
         input.innerText = joinedValue;
+        console.log(inputValue, typeof joinedValue, joinedValue)
     })
 }
 
@@ -45,18 +69,9 @@ backspace()
 
 function clear() {
     clearBtn.addEventListener('click', () => {
-        inputValue.length = 0;
-        input.innerText = 0;
+        reset()
+        calcArr.length = 0
     })
 }
 
 clear();
-
-
-// function multiply(arr) {
-//     let sum = 1
-//     for(let i = 0; i < arr.length; i++) {
-//         sum *= arr[i];
-//     }
-//     return sum;
-// }
