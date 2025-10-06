@@ -6,20 +6,39 @@ const backspaceBtn = document.querySelector('.backspace');
 
 const inputValue = [];
 const calcArr = [];
+const operatorArr = [];
 let operatorClicked = false;
 let operator;
 let joinedValue;
-let result; 
+let result;
 
-function calc(arr) {
-    let result = arr[0];
-    for(let i = 0; i < arr.length; i++) {
-        
+function calc(numbers,opArr) {
+    result = numbers[0];
+    for(let i = 0; i < opArr.length; i++) {
+        const op = opArr[i];
+        const nextNum = numbers[i + 1];
+
+        switch (op) {
+            case '+':
+            result = result + nextNum;
+            break;
+            case '-':
+            result = result - nextNum;
+            break;
+            case '*':
+            result = result * nextNum;
+            break;
+            case '/':
+            result = result / nextNum;
+            break;
+        }
     }
+
+    return input.innerText = result;
 }
 
 function reset() {
-    inputValue.length = 0
+    inputValue.length = 0;
     joinedValue = 0;
     input.innerText = 0;
 }
@@ -31,16 +50,19 @@ function operatorPressed() {
             operatorClicked = true;
             if(operatorClicked = true) {
                 calcArr.push(joinedValue);
-                calcArr.push(operators[i].value)
+                operatorArr.push(operators[i].value);
                 reset();
             }
-            if(calcArr[calcArr.length - 1] === '=') {
-                calcArr.pop();
-                calc(calcArr);
+            if(operatorArr[operatorArr.length - 1] === '=') {
+                operatorArr.pop();
+                calc(calcArr,operatorArr);
+                console.log(calcArr)
+                
             }           
         })
     }
 }
+
 operatorPressed()
 
 function numsPressed() {
@@ -61,7 +83,6 @@ function backspace() {
         inputValue.splice(-1);
         joinedValue = Number(inputValue.join(''));
         input.innerText = joinedValue;
-        console.log(inputValue, typeof joinedValue, joinedValue)
     })
 }
 
@@ -70,7 +91,8 @@ backspace()
 function clear() {
     clearBtn.addEventListener('click', () => {
         reset()
-        calcArr.length = 0
+        calcArr.length = 0;
+        operatorArr.length = 0;
     })
 }
 

@@ -72,12 +72,12 @@ body {
     background-color: #adb5bd;
 }
 
-.cancel:hover,
+.clear:hover,
 .backspace:hover {
     background-color: #9ca3aa;
 }
 
-.cancel:active,
+.clear:active,
 .backspace:active {
     background-color: #8a9197;
 }
