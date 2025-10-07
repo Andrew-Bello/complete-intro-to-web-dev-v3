@@ -1,95 +1,95 @@
-/* GENERAL STYLES */
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open sans', sans-serif;
-    background-color: #dee2e6;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 48px;
-    font-weight: 200;
+    background-color: #dee2e6;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.container {
+.calc {
     background-color: #343a40;
-    height: 700px;
-    width: 450px;
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    color: #f1f3f5;
+    width: 400px;
+    height: 500px;
     border: 1px solid black;
-    border-radius: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 .input {
-    color: #f8f9fa;
+    height: 80px;
+    font-size: 36px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-right: 8px;
 }
 
-.row {
+.calc-buttons {
+    flex: 1;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.calc-button-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.btn {
-    border: 1px solid black;
-    font-size: 48px;
+.calc-button {
+    background-color: #f1f3f5;
+    border-radius: 0;
+    border: 1px solid #343a40;
     cursor: pointer;
-    font-weight: 200;
+    font-size: 21px;
 }
 
-.operator {
-    background-color: #22b8cf;
-}
-
-.operator:hover {
-    background-color: #15aabf;
-}
-
-.operator:active {
-    background-color: #1098ad;
-}
-
-.clear {
-    grid-column: span 2;
-}
-
-.zero {
-    grid-column: span 3;
-}
-
-.clear, 
-.backspace {
-    background-color: #adb5bd;
-}
-
-.clear:hover,
-.backspace:hover {
-    background-color: #9ca3aa;
-}
-
-.clear:active,
-.backspace:active {
-    background-color: #8a9197;
-}
-
-.num {
+.calc-button:hover {
     background-color: #e9ecef;
 }
 
-.num:hover {
-    background-color: #d2d4d7;
+.calc-button:active {
+    background-color: #dee2e6;
 }
 
-.num:active {
-    background-color: #babdbf;
+.calc-button:last-child {
+    background-color: #228be6;
+}
+
+.calc-button:last-child:hover {
+    background-color: #1c7ed6;
+}
+.calc-button:last-child:active {
+    background-color: #1971c2;
+}
+
+.double {
+    grid-column: span 2;
+    background-color: #adb5bd;
+}
+
+.double:hover,
+.backspace:hover  {
+    background-color: #868e96;
+}
+
+.double:active,
+.backspace:active {
+    background-color: #495057;
+}
+
+.triple {
+    grid-column: span 3;
+}
+
+.backspace {
+    background-color: #adb5bd;
 }
