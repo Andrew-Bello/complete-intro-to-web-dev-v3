@@ -16,12 +16,13 @@ body {
 .calc {
     background-color: #343a40;
     color: #f1f3f5;
-    width: 400px;
+    width: 350px;
     height: 500px;
     border: 1px solid black;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 .input {
@@ -50,6 +51,7 @@ body {
     border: 1px solid #343a40;
     cursor: pointer;
     font-size: 21px;
+    border-radius: 4px;
 }
 
 .calc-button:hover {

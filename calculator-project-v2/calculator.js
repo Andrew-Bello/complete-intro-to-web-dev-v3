@@ -33,7 +33,7 @@ function flushOperation(intBuffer) {
 }
 
 function handleMath(value) {
-    if(buffer === 0 ) {
+    if(buffer === '0') {
         return;
     }
 
