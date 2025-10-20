@@ -1,14 +1,15 @@
 let buffer = '0';
 let runningTotal = 0;
 let previousOperator;
-let input = document.querySelector('.input');
+const input = document.querySelector('.input');
 
-function buttonClicked(value) {
-    if (isNaN(parseInt(value))) {
+function buttonClick(value) {
+    if(isNaN(parseInt(value))) {
         handleSymbol(value);
     } else {
         handleNumber(value);
     };
+
     rerender();
 };
 
@@ -18,22 +19,6 @@ function handleNumber(number) {
     } else {
         buffer += number;
     };
-};
-
-function handleMath(value) {
-    if (buffer === '0') {
-        return; 
-    }
-
-    const intBuffer = parseInt(buffer);
-    if (runningTotal === 0) {
-        runningTotal = intBuffer;
-    } else {
-        flushOperation(intBuffer);
-    };
-
-    previousOperator = value;
-    buffer = '0';
 };
 
 function flushOperation(intBuffer) {
@@ -48,10 +33,28 @@ function flushOperation(intBuffer) {
     };
 };
 
+function handleMath(value) {
+    const intBuffer = parseInt(buffer);
+    if (runningTotal === 0) {
+        runningTotal = intBuffer;
+    } else {
+        flushOperation(intBuffer);
+    }
+
+    previousOperator = value;
+    buffer = '0';
+};
+
 function handleSymbol(symbol) {
     switch(symbol) {
         case 'C':
             buffer = '0';
+            break;
+        case '=':
+            flushOperation(parseInt(buffer));
+            buffer = '' + runningTotal;
+            runningTotal = 0;
+            previousOperator = null;
             break;
         case '←':
             if (buffer.length === 1) {
@@ -60,20 +63,11 @@ function handleSymbol(symbol) {
                 buffer = buffer.substring(0, buffer.length - 1);
             }
             break;
-        case '=':
-            if (previousOperator === null) {
-                return;
-            }
-            flushOperation(parseInt(buffer));
-            previousOperator = null;
-            buffer = '' + runningTotal;
-            runningTotal = 0;
-            break;
         case '+':
         case '-':
         case '×':
         case '÷':
-            handleMath(symbol)
+            handleMath(symbol);
             break;
     };
 };
@@ -84,8 +78,8 @@ function rerender() {
 
 function init() {
     document.querySelector('.calc-buttons').addEventListener('click', (event) => {
-        if(event.target.matches('button')) {
-            buttonClicked(event.target.innerText);
+        if (event.target.matches('button')) {
+            buttonClick(event.target.innerText);
         } else {
             return;
         };
@@ -93,3 +87,7 @@ function init() {
 };
 
 init();
+
+// ×
+// ÷
+// ←
